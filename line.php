@@ -42,6 +42,15 @@ if ( sizeof($request_array['events']) > 0 )
 		   $reply_message = 'ฉันขอเลขที่ใบอนุญาตของคุณเพื่อทำการตรวจสอบ';
 	   }
 	   
+	    
+	   $split_text = explode(" ", $text);
+	   foreach ($split_text as $t)
+	   {$reply_message = $t;}
+	   
+	   //if($text == "ฉันหาเลขใบอนุญาตของฉันไม่เจอ มันหายไป บอทเช็คจากฐานข้อมูลใบอนุญาตได้ไหม"){
+	//	   $reply_message = 'ฉันขอเลขที่ใบอนุญาตของคุณเพื่อทำการตรวจสอบ';
+	   //}
+	   
    }
    else
     $reply_message = 'ระบบกรมสรรพสามิตได้รับ '.ucfirst($event['message']['type']).' ของคุณแล้ว';
