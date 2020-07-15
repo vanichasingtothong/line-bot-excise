@@ -22,7 +22,7 @@ if ( sizeof($request_array['events']) > 0 )
    {
 		$text = $event['message']['text'];
 		
-		$reply_message = '('.$text.') ได้รับข้อความเรียบร้อย!!';   
+		$reply_message = 'ระบบกรมสรรพสามิตได้รับข้อความ ('.$text.') เรียบร้อย!!';   
    }
    else
     $reply_message = 'ระบบกรมสรรพสามิตได้รับ '.ucfirst($event['message']['type']).' ของคุณแล้ว';
