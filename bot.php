@@ -10,8 +10,7 @@ $events = json_decode($content, true);
 
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) {
-	send_LINE($events['ESP']);
-		
+	send_LINE($events['ESP']);		
 	echo "OK";
 }
 
@@ -29,8 +28,7 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			$Topic = "NodeMCU1" ;			
-			getMqttfromlineMsg($Topic,$text);   
-			
+			getMqttfromlineMsg($Topic,$text); 			
 		}
 	}
 }
