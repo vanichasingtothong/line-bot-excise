@@ -1,2 +1,3 @@
 <?php
-echo "Hello LINE BOT \"KANT_59000001!!\"";
+echo "ยินดีต้อนรับสู่..กรมสรรพสามิต";
+echo "Excise Smart Service";
