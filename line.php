@@ -44,8 +44,10 @@ if ( sizeof($request_array['events']) > 0 )
 	   
 	    
 	   $split_text = explode(" ", $text);
-	   foreach ($split_text as $t)
-	   {$reply_message = $t;}
+	   //foreach ($split_text as $t){$reply_message = $t;}
+	   if (in_array("ฉันหาเลขใบอนุญาตของฉันไม่เจอ", $split_text)) { 
+		   $reply_message = "ฉันขอชื่อ-นามสกุล หรือเลขที่บัตรปปช. ของท่านเพื่อทำการตรวจสอบ.."; 
+	   } 
 	   
 	   //if($text == "ฉันหาเลขใบอนุญาตของฉันไม่เจอ มันหายไป บอทเช็คจากฐานข้อมูลใบอนุญาตได้ไหม"){
 	//	   $reply_message = 'ฉันขอเลขที่ใบอนุญาตของคุณเพื่อทำการตรวจสอบ';
