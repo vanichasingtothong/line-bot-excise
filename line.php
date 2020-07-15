@@ -30,6 +30,17 @@ if ( sizeof($request_array['events']) > 0 )
 	    if($text == "กว่าจะตอบฉันน๊ะบอท"){
 		   $reply_message = 'ขอภัยในความล่าช้า ฉันยังง่วงนิสหน่อย แต่ฉันพร้อให้บริการตลอดเวลา..';
 	   }
+	   
+	   if($text == "สถานการณ์โควิดวันนี้"){
+		   
+		   $json_string = 'https://covid19.th-stat.com/api/open/today';
+		   $jsondata = file_get_contents($json_string);
+		   $obj = json_decode($jsondata,true);
+		   //echo "<pre>"; print_r($obj);
+		   
+		   $reply_message = $obj;
+	   }
+	   
 	   if($text == "ปริมาณแอลกอฮอล์ที่เข้าสู่ระบบ"){
 		   $reply_message = 'https://www.excise.go.th/cs/groups/public/documents/document/dwnt/mzgy/~edisp/uatucm382602.pdf';
 	   }
@@ -40,19 +51,14 @@ if ( sizeof($request_array['events']) > 0 )
 	   
 	   if($text == "ใบอนุญาตขายสุราของฉันหมดอายุวันไหน"){
 		   $reply_message = 'ฉันขอเลขที่ใบอนุญาตของคุณเพื่อทำการตรวจสอบ';
-	   }
-	   
+	   }	   
 	    
 	   $split_text = explode(" ", $text);
 	   //foreach ($split_text as $t){$reply_message = $t;}
 	   if (in_array("ฉันหาเลขใบอนุญาตของฉันไม่เจอ", $split_text)) { 
 		   $reply_message = "ฉันขอชื่อ-นามสกุล หรือเลขที่บัตรปปช. ของท่านเพื่อทำการตรวจสอบ.."; 
 	   } 
-	   
-	   //if($text == "ฉันหาเลขใบอนุญาตของฉันไม่เจอ มันหายไป บอทเช็คจากฐานข้อมูลใบอนุญาตได้ไหม"){
-	//	   $reply_message = 'ฉันขอเลขที่ใบอนุญาตของคุณเพื่อทำการตรวจสอบ';
-	   //}
-	   
+   
    }
    else
     $reply_message = 'ระบบกรมสรรพสามิตได้รับ '.ucfirst($event['message']['type']).' ของคุณแล้ว';
