@@ -1,3 +1,3 @@
 <?php
-echo "ยินดีต้อนรับสู่..กรมสรรพสามิต";
-echo "Excise Smart Service";
+echo "ยินดีต้อนรับสู่..กรมสรรพสามิต\n";
+echo "Excise Smart Service\n";
