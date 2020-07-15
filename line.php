@@ -27,6 +27,9 @@ if ( sizeof($request_array['events']) > 0 )
 	   if($text == "ปริมาณแอลกอฮอล์ที่เข้าสู่ระบบ"){
 		   $reply_message = 'https://www.excise.go.th/cs/groups/public/documents/document/dwnt/mzgy/~edisp/uatucm382602.pdf';
 	   }
+	   if($text == "ตื่นรึยังบอท"){
+		   $reply_message = 'ตื่นแล้ว! พร้อมให้บริการ...';
+	   }
    }
    else
     $reply_message = 'ระบบกรมสรรพสามิตได้รับ '.ucfirst($event['message']['type']).' ของคุณแล้ว';
