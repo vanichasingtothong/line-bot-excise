@@ -44,8 +44,8 @@ if ( sizeof($request_array['events']) > 0 )
 		   
 		   $obj = json_decode($result);
 		   
-		   
-		   $reply_message = $obj->{'Deaths'};
+		   $reply_message = $result;
+		   $reply_message = 'ตาย'. $obj->{'Deaths'};
 	   }
 	   
 	   if($text == "ปริมาณแอลกอฮอล์ที่เข้าสู่ระบบ"){
