@@ -33,22 +33,19 @@ if ( sizeof($request_array['events']) > 0 )
 	   
 	   if($text == "สถานการณ์โควิดวันนี้"){
 		   $url = 'https://covid19.th-stat.com/api/open/today';
-		   //$content = trim(file_get_contents("php://input"));
-		   //$decoded = json_decode($content, true);
-		   //$obj = json_decode($jsondata,true);
-		   //echo "<pre>"; print_r($obj);
-		   //$cv = curl_init();
-		   //curl_setopt($cv, CURLOPT_URL, “https://covid19.th-stat.com/api/open/today");
-			       
-			    $ch = curl_init($url);
- curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
- curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
- curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
- curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
- curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
- $result = curl_exec($ch);
- curl_close($ch);   
-		   $reply_message = $result;
+		   $ch = curl_init($url);
+		   curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		   curl_setopt($ch, CURLOPT_HTTPHEADER, $post_header);
+		   curl_setopt($ch, CURLOPT_POSTFIELDS, $post_body);
+		   curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+		   $result = curl_exec($ch);
+		   curl_close($ch);   
+		   
+		   $obj = json_decode($result);
+		   
+		   
+		   $reply_message = $obj->{'Deaths'};
 	   }
 	   
 	   if($text == "ปริมาณแอลกอฮอล์ที่เข้าสู่ระบบ"){
