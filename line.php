@@ -36,6 +36,9 @@ if ( sizeof($request_array['events']) > 0 )
 		   $reply_message = 'https://webdev.excise.go.th/alc/locations.html';
 	   }
 	   
+	   if($text == "ใบอนุญาตขายสุราของฉันหมดอายุวันไหนบอท"){
+		   $reply_message = 'ฉันขอเลขที่ใบอนุญาตของคุณเพื่อทำการตรวจสอบ';
+	   }
 	   
    }
    else
