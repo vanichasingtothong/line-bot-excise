@@ -28,7 +28,7 @@ if ( sizeof($request_array['events']) > 0 )
 		   $reply_message = 'ตื่นแล้ว! พร้อมให้บริการ...';
 	   }
 	    if($text == "กว่าจะตอบฉันน๊ะบอท"){
-		   $reply_message = 'ขอภัยในความล่าช้า ฉันยังง่วงสหน่อย แต่ฉันพร้อให้บริการตลอดเวลา..';
+		   $reply_message = 'ขอภัยในความล่าช้า ฉันยังง่วงนิสหน่อย แต่ฉันพร้อให้บริการตลอดเวลา..';
 	   }
 	   if($text == "ปริมาณแอลกอฮอล์ที่เข้าสู่ระบบ"){
 		   $reply_message = 'https://www.excise.go.th/cs/groups/public/documents/document/dwnt/mzgy/~edisp/uatucm382602.pdf';
